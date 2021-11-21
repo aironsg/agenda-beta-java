@@ -27,7 +27,7 @@ public class IndexAgenda {
 			case 2:
 				String nome = JOptionPane.showInputDialog("INFORME O NOME DO CLIENTE");
 				Predicate<Cliente> buscaNome = b -> b.getNomeCliente().equalsIgnoreCase(nome);
-				if (clientes.removeIf(buscaNome) == true) {
+				if (clientes.removeIf(buscaNome)) {
 					clientes.removeIf(buscaNome);
 					JOptionPane.showMessageDialog(null, "CLIENTE REMOVIDO COM SUCESSO!");
 				} else {
