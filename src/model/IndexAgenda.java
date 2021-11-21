@@ -28,12 +28,20 @@ public class IndexAgenda {
 			case 2:
 				String nome = JOptionPane.showInputDialog("INFORME O NOME DO CLIENTE");
 				Predicate<Cliente> buscaNome = b -> b.getNomeCliente().equalsIgnoreCase(nome);
-				clientes.removeIf(buscaNome);
+				if (clientes.removeIf(buscaNome) == true) {
+					clientes.removeIf(buscaNome);
+					JOptionPane.showMessageDialog(null, "CLIENTE REMOVIDO COM SUCESSO!");
+				} else {
+					JOptionPane.showMessageDialog(null, "CLIENTE NÃO ENCONTRADO!");
+				}
 				break;
 			case 3:
+				if (clientes.size() == 0) {
+					JOptionPane.showMessageDialog(null, "Agenda Vazia!\nInsira novos clientes");
+				}
 
 				for (Cliente c : clientes) {
-					System.out.println(c);
+					JOptionPane.showMessageDialog(null, c);
 				}
 				break;
 
@@ -42,7 +50,7 @@ public class IndexAgenda {
 				op = 0;
 				break;
 			default:
-				System.out.println("Informação incorreta!\nFavor tente novamente!");
+				JOptionPane.showMessageDialog(null, "Informação incorreta!\nFavor tente novamente!");
 				break;
 			}
 
