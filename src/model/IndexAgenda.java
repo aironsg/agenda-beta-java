@@ -2,7 +2,6 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.function.Predicate;
 
 import javax.swing.JOptionPane;
@@ -12,7 +11,7 @@ public class IndexAgenda {
 
 		Cliente cliente = new Cliente();
 		List<Cliente> clientes = new ArrayList<Cliente>();
-		Scanner teclado = new Scanner(System.in);
+		
 		int op;
 
 		do {
@@ -56,7 +55,7 @@ public class IndexAgenda {
 
 		} while (op != 0);
 
-		teclado.close();
+		
 	}
 
 }
